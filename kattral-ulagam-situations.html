@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>சுந்தர்ராஜ் கற்றல் உலகம் – Client Conversations</title>
+<style>
+:root{--bg:#f4f1ea;--card:#fff;--ink:#1f2937;--mute:#6b7280;--brand:#0f766e;--hd:#fff;--client:#fff;--team:#d9f2ee;--line:#e5e7eb;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111827;--card:#1f2937;--ink:#f3f4f6;--mute:#9ca3af;--brand:#2dd4bf;--hd:#042f2e;--client:#273244;--team:#134e4a;--line:#374151}}
+:root[data-theme="dark"]{--bg:#111827;--card:#1f2937;--ink:#f3f4f6;--mute:#9ca3af;--brand:#2dd4bf;--hd:#042f2e;--client:#273244;--team:#134e4a;--line:#374151}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans Tamil","Latha","Nirmala UI",system-ui,sans-serif;line-height:1.6}
+header{background:var(--brand);color:var(--hd);padding:20px 16px;text-align:center}
+header h1{margin:0;font-size:clamp(1.4rem,5vw,2.2rem)}
+header p{margin:4px 0 0;opacity:.9;font-size:.95rem}
+.wrap{max-width:820px;margin:0 auto;padding:12px}
+.tools{position:sticky;top:0;z-index:5;background:var(--bg);padding:8px 0;display:flex;gap:8px;flex-wrap:wrap}
+.tools input,.tools select{flex:1 1 200px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font:inherit}
+.stats{font-size:.85rem;color:var(--mute);margin:4px 0 10px}
+#chat{display:flex;flex-direction:column;gap:10px}
+.sit{align-self:stretch;background:var(--card);border:1px solid var(--line);border-left:5px solid var(--brand);border-radius:10px;padding:8px 12px;margin-top:14px;font-weight:700}
+.sit small{display:block;font-weight:400;color:var(--mute)}
+.msg{max-width:82%;padding:9px 13px;border-radius:14px;border:1px solid var(--line);box-shadow:0 1px 2px rgba(0,0,0,.05)}
+.msg.client{align-self:flex-start;background:var(--client);border-top-left-radius:4px}
+.msg.team{align-self:flex-end;background:var(--team);border-top-right-radius:4px}
+.who{font-weight:700;font-size:.82rem;color:var(--brand)}
+.txt{margin:2px 0}
+.meta{font-size:.72rem;color:var(--mute);text-align:right}
+mark{background:#fde68a;color:#111;border-radius:3px}
+.empty{text-align:center;color:var(--mute);padding:30px}
+.fab{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));background:var(--brand);color:var(--hd);border:0;border-radius:99px;padding:10px 16px;font:inherit;cursor:pointer;box-shadow:0 3px 8px rgba(0,0,0,.25)}
+</style>
+</head>
+<body>
+<header>
+  <h1>சுந்தர்ராஜ் கற்றல் உலகம்</h1>
+  <p>Client project conversations · 200 messages · 25 different situations</p>
+</header>
+<div class="wrap">
+  <div class="tools">
+    <input id="q" type="search" placeholder="🔍 Search messages…">
+    <select id="sit"><option value="">All situations</option></select>
+  </div>
+  <div class="stats" id="stats"></div>
+  <div id="chat"></div>
+</div>
+<button class="fab" id="down">⬇ Latest message</button>
+<script>
+const TEAM="Sundarraju Team";
+// [emoji+type, client, 8 messages alternating client / team]
+const S=[
+["🚀 Project kickoff","Arun",["Hello! We want a learning website for our students. Can we start this week?","Welcome Arun! Yes, let's begin with a kickoff call on Wednesday at 11 AM.","What do you need from us before the call?","Please share your logo, course list and 2-3 sites you like.","We like clean designs with a lot of white space.","Noted. We will prepare three sample layouts for the call.","Is Tamil language support included from day one?","Absolutely. The whole site will be bilingual, Tamil and English."]],
+["📋 Requirements gathering","Meena",["We need student login, video lessons and weekly tests.","Understood. Should parents also get a login to see progress?","Good point, yes parents should see reports only.","We will add a read-only parent role then.","How many students will use it at the same time?","Around 500 on a normal day, maybe 1,500 before exams.","Then we will plan the hosting for 2,000 concurrent users.","Perfect, please send the requirement summary in writing."]],
+["💰 Pricing negotiation","Karthik",["Your quote is higher than we expected. Can you reduce it?","We can reduce it if we phase the project. What is your budget?","Around 60% of your quote.","We can deliver the core site now and add the app in phase two.","What exactly would be in phase one?","Home, courses, login, video player and payment gateway.","And the price for phase one alone?","We will send a revised quote within two hours."]],
+["🎨 Design feedback","Lakshmi",["The colour scheme feels too dark for a children's site.","Thanks for telling us. We can try a brighter palette with yellow and teal.","Also the Tamil font looks small on mobile.","We will increase it to 18px and check on real phones.","Can the logo be bigger on the header?","Yes, we will enlarge it by 30% and keep the header slim.","This is much better! Please apply it to all pages.","Done. Updated pages will be live on the preview link tonight."]],
+["🐞 Bug report","Rajesh",["The login button is not working on my phone.","Sorry about that! Which phone and browser are you using?","Samsung phone with Chrome.","Thanks. We reproduced it, a script error on small screens.","How long will the fix take?","About two hours including testing.","Please let me know when it is done.","Fixed and deployed. Please clear your cache and try again."]],
+["⏰ Deadline delay","Priya",["We were promised delivery on the 15th. Where are we?","We are 80% complete, but the video module needs two extra days.","Our school reopens on the 18th, so this is risky.","Understood. We will add a second developer to catch up.","Can you guarantee the 17th?","We can commit to the 17th for the main features.","Please send a daily progress update until then.","Yes, you will get a short update every evening at 6 PM."]],
+["💳 Payment reminder","Suresh",["I got your invoice. Can I pay next week?","Of course, the due date is Friday. A short delay is fine.","The bank transfer is taking time. Is UPI okay?","Yes, UPI works. We will share our UPI ID now.","Payment sent. Please check.","Received, thank you! We will send the receipt shortly.","Also, can I get a GST invoice?","Sure. Please share your GST number and we will reissue it."]],
+["🔄 Scope change","Divya",["We now want a live class feature. Is it possible?","Possible, but it is outside the original scope. We will estimate the effort.","How much extra time will it need?","Around two weeks with video integration and testing.","And extra cost?","We will send a change request with the exact amount.","Okay, but do not delay the current work.","No, we will run both tracks in parallel."]],
+["😊 Praise and thanks","Arun",["Just wanted to say, the students love the new site!","That is wonderful to hear, thank you Arun!","Teachers say uploading lessons is very easy now.","We designed the admin panel to be simple for them.","Many parents asked who built it.","Please feel free to share our contact with them.","We will put your name in our portfolio, if you agree.","Yes, happily. You can use our logo too."]],
+["😠 Customer complaint","Meena",["Nobody replied to my emails for two days. This is unacceptable.","We are very sorry, Meena. That should not have happened.","I have a deadline and I am worried now.","I will personally handle your project from today.","What went wrong on your side?","Your emails went to a shared inbox no one was watching.","Please make sure it does not repeat.","We have set up a priority line. Here is my direct number."]],
+["🌐 Tamil content and translation","Karthik",["Some Tamil text on the site has spelling mistakes.","Thank you for spotting them. Can you send the list?","I will mark them in a document tonight.","Great. A Tamil proofreader will review the whole site too.","Is there a charge for that?","No, proofreading is part of the package.","Can we also add a Tamil voice-over for lessons?","Yes, we can integrate audio. Do you have a narrator?"]],
+["🖥️ Hosting and domain","Lakshmi",["Which domain name should we buy for the site?","We suggest something short, like kattralulagam.in.","Is it available?","Let us check. Yes, it is free right now.","Should I buy it or will you?","Better if you buy it so you own it. We will guide you.","And hosting? I heard it is expensive.","A good Indian server costs about 700 rupees a month for your size."]],
+["📅 Demo meeting","Rajesh",["Can we see a demo of the site this week?","Sure! Thursday 4 PM or Friday 11 AM?","Thursday works. Will it be on Google Meet?","Yes, we will send the link a day before.","I will bring two teachers for feedback.","Good, their feedback will be very useful.","How long will the demo be?","About 40 minutes, plus 20 for questions."]],
+["🔒 Security and privacy","Priya",["Is student data safe on this platform?","Yes. Passwords are encrypted and all pages use HTTPS.","Can parents see other children's marks?","No, each parent can see only their own child.","What if someone hacks the site?","We keep daily backups and monitor for suspicious logins.","Where will the backups be stored?","On a separate secure server in India."]],
+["📱 Mobile app request","Suresh",["Students mostly use phones. Do we need an app?","The website is mobile friendly, but an app helps with notifications.","How much extra for an Android app?","Around 30% of the website cost.","Can it work offline for lessons?","Yes, lessons can be downloaded when on Wi-Fi.","Let us do that in phase two.","Great plan. We will design the website API with the app in mind."]],
+["↩️ Refund request","Divya",["I would like to cancel the video module and get a refund.","We are sorry to hear that. May we ask what went wrong?","The hosting cost for videos is too high for us.","We can use a cheaper video service instead. Would that help?","How much cheaper?","About 40% less per month.","Okay, let's try that before cancelling.","Thank you. We will set it up and show you the cost report."]],
+["🚨 Urgent change","Arun",["Please change the exam date on the home page immediately!","Understood. Which date should it show?","25th September, not 15th.","Updated. Please refresh and confirm.","Still showing the old date on my phone.","That is the cache. We have cleared it on the server.","Now it shows correctly. Thanks for the quick help.","Anytime. For urgent edits you can message us here."]],
+["📈 SEO and marketing","Meena",["How will parents find our site on Google?","We will set up SEO with proper titles and descriptions.","Can the site appear for 'best tuition in Chennai'?","It takes time, but we will target local keywords.","Should we also run Google ads?","A small ad budget during admissions can help a lot.","How much would you suggest?","Start with 5,000 rupees a month and review the results."]],
+["🎓 Training and handover","Karthik",["Our staff are not very technical. Can you train them?","Yes, we offer a two-hour session and a video guide.","Can the session be in Tamil?","Of course, we will explain everything in Tamil.","Will you give us a manual too?","Yes, a simple illustrated PDF in Tamil and English.","When can we schedule the training?","Next Monday morning works for us. Shall we confirm?"]],
+["🛠️ Maintenance contract","Lakshmi",["After launch, who will fix problems if they come?","We offer a yearly maintenance plan with support and updates.","What does it include?","Bug fixes, security updates, backups and 5 hours of changes monthly.","What is the yearly cost?","It is 12,000 rupees a year, billed quarterly.","Can we start it after a three-month free support period?","Yes, three months of free support are already included."]],
+["💡 Feature suggestion","Rajesh",["Can students earn badges for finishing lessons?","That is a lovely idea! It increases motivation.","Can the badges look like cartoon animals?","Yes, our designer can create a set of ten.","Will it delay the launch?","Not if we start now. It adds about three days.","Please go ahead, we will cover the extra charge.","Great. We will send badge sketches by tomorrow."]],
+["🐢 Slow performance","Priya",["The site is very slow during our evening classes.","Thank you for reporting. We will check the server load.","It happens at around 7 PM every day.","We see a traffic spike then. The server is too small.","Can you fix it?","We will upgrade the plan and compress the video thumbnails.","Please do it before tomorrow's class.","The upgrade is done tonight. Please test at 7 PM tomorrow."]],
+["🎉 Launch day","Suresh",["Today is the day! Are we ready to go live?","Yes. The final checks passed. Shall we switch the domain now?","Please do it at 6 PM after school.","Done. The site is live at your domain.","I can see it! The home page looks beautiful.","We will monitor it closely for the next 24 hours.","Can we send the link to all parents on WhatsApp?","Yes, go ahead. We are ready for the traffic."]],
+["📝 Post-launch feedback","Divya",["It has been two weeks since the launch. Things are going well.","Happy to hear that. Any problems we should know about?","A few students forgot their passwords.","We can add an easy reset by mobile OTP.","That would help a lot.","We will release it this weekend.","Can we get a report on how many students logged in?","Yes, we will add a simple weekly usage report."]],
+["🤝 Referral and new project","Arun",["My friend runs a coaching centre and needs a website too.","Thank you for recommending us, Arun!","Can I get any discount for the referral?","Yes, you get 10% off your next invoice.","I will give him your number tonight.","We will call him tomorrow and understand his needs.","He also wants a Tamil quiz app.","Wonderful. We can reuse parts of your exam module for it."]]
+];
+const msgs=[];
+let time=new Date(2026,8,1,9,0).getTime();
+S.forEach((s,si)=>{
+  time+=22*3600000;
+  s[2].forEach((text,i)=>{
+    time+=(4+((si*5+i*3)%17))*60000;
+    const team=i%2===1;
+    msgs.push({id:msgs.length+1,sit:si,from:team?TEAM:s[1],type:team?"team":"client",text,time});
+  });
+});
+const chat=document.getElementById("chat"),q=document.getElementById("q"),sel=document.getElementById("sit"),stats=document.getElementById("stats");
+S.forEach((s,i)=>sel.add(new Option((i+1)+". "+s[0],i)));
+const dFmt=new Intl.DateTimeFormat("en-IN",{day:"numeric",month:"short",year:"numeric"});
+const tFmt=new Intl.DateTimeFormat("en-IN",{hour:"2-digit",minute:"2-digit"});
+const esc=s=>s.replace(/[&<>]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[m]));
+function render(){
+  const term=q.value.trim().toLowerCase(), w=sel.value;
+  const list=msgs.filter(m=>(w===""||m.sit==+w)&&(!term||m.text.toLowerCase().includes(term)||m.from.toLowerCase().includes(term)));
+  let html="",last=-1;
+  list.forEach(m=>{
+    if(m.sit!==last){last=m.sit;html+=`<div class="sit">${m.sit+1}. ${S[m.sit][0]}<small>Client: ${S[m.sit][1]} · ${dFmt.format(m.time)}</small></div>`}
+    let txt=esc(m.text);
+    if(term) txt=txt.replace(new RegExp(term.replace(/[.*+?^${}()|[\]\\]/g,"\\$&"),"gi"),x=>`<mark>${x}</mark>`);
+    html+=`<div class="msg ${m.type}"><div class="who">${m.from}</div><div class="txt">${txt}</div><div class="meta">#${m.id} · ${tFmt.format(m.time)}</div></div>`;
+  });
+  chat.innerHTML=html||'<div class="empty">No messages found</div>';
+  stats.textContent=`Total ${msgs.length} messages · ${S.length} situations · Showing ${list.length}`;
+}
+q.addEventListener("input",render);sel.addEventListener("change",render);
+document.getElementById("down").onclick=()=>window.scrollTo({top:document.body.scrollHeight,behavior:"smooth"});
+render();
+</script>
+</body>
+</html>
