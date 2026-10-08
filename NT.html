@@ -1,0 +1,1895 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>சுந்தர்ராஜு கற்றல் உலகம் | Full English Grammar</title>
+
+<style>
+/* =========================================================
+   SUNDARRAJU KATTRAL ULAGAM
+   FULL ENGLISH GRAMMAR WEBSITE
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, "Noto Sans Tamil", sans-serif;
+    background: #f4f7fb;
+    color: #172033;
+    line-height: 1.7;
+}
+
+/* ---------------- HEADER ---------------- */
+
+header {
+    background: linear-gradient(135deg, #071952, #088395, #35a29f);
+    color: white;
+    padding: 35px 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,.2);
+}
+
+header h1 {
+    font-size: 38px;
+    margin-bottom: 5px;
+}
+
+header h2 {
+    font-size: 24px;
+    color: #fff700;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 17px;
+}
+
+/* ---------------- NAVIGATION ---------------- */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #06113c;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,.2);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 9px 14px;
+    margin: 3px;
+    border-radius: 20px;
+    font-size: 14px;
+    transition: .3s;
+}
+
+nav a:hover {
+    background: #35a29f;
+}
+
+/* ---------------- MAIN ---------------- */
+
+.container {
+    width: 94%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+section {
+    padding: 45px 0;
+}
+
+.section-title {
+    text-align: center;
+    color: #071952;
+    margin-bottom: 25px;
+    font-size: 30px;
+}
+
+.section-title span {
+    color: #088395;
+}
+
+/* ---------------- HERO ---------------- */
+
+.hero {
+    margin-top: 25px;
+    background: linear-gradient(135deg, #ffffff, #e8ffff);
+    border-radius: 20px;
+    padding: 40px 25px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,.08);
+}
+
+.hero h2 {
+    font-size: 32px;
+    color: #071952;
+}
+
+.hero p {
+    margin: 15px auto;
+    max-width: 850px;
+    font-size: 18px;
+}
+
+.btn {
+    display: inline-block;
+    background: #088395;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: #071952;
+    transform: translateY(-2px);
+}
+
+/* ---------------- SEARCH ---------------- */
+
+.search-box {
+    text-align: center;
+    margin: 25px 0;
+}
+
+#searchInput {
+    width: 90%;
+    max-width: 650px;
+    padding: 14px 20px;
+    border: 2px solid #088395;
+    border-radius: 30px;
+    font-size: 16px;
+    outline: none;
+}
+
+/* ---------------- CARDS ---------------- */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 18px rgba(0,0,0,.08);
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,.14);
+}
+
+.card h3 {
+    color: #071952;
+    margin-bottom: 10px;
+}
+
+.card .tamil {
+    color: #b42318;
+    font-weight: bold;
+}
+
+.card .english {
+    color: #088395;
+    font-weight: bold;
+}
+
+.example {
+    background: #f0fbff;
+    border-left: 5px solid #088395;
+    padding: 12px;
+    margin-top: 12px;
+    border-radius: 5px;
+}
+
+/* ---------------- TABLE ---------------- */
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,.07);
+}
+
+th {
+    background: #071952;
+    color: white;
+    padding: 13px;
+}
+
+td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background: #f4fbfc;
+}
+
+/* ---------------- LESSON ---------------- */
+
+.lesson {
+    background: white;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 18px rgba(0,0,0,.07);
+}
+
+.lesson h3 {
+    color: #088395;
+    margin-bottom: 10px;
+}
+
+.formula {
+    background: #fff7d6;
+    padding: 15px;
+    border-left: 5px solid #ffb000;
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+/* ---------------- TABS ---------------- */
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    border: none;
+    background: #dceef1;
+    color: #071952;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+    background: #088395;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* ---------------- QUIZ ---------------- */
+
+.quiz-box {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 18px rgba(0,0,0,.08);
+    margin-bottom: 20px;
+}
+
+.question {
+    margin-bottom: 25px;
+}
+
+.question h3 {
+    color: #071952;
+    margin-bottom: 10px;
+}
+
+.option {
+    display: block;
+    background: #f4f7fb;
+    padding: 10px;
+    margin: 7px 0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.option:hover {
+    background: #dceef1;
+}
+
+.result {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+/* ---------------- FLASH CARD ---------------- */
+
+.flashcard {
+    max-width: 500px;
+    min-height: 220px;
+    margin: 20px auto;
+    perspective: 1000px;
+}
+
+.flash-inner {
+    position: relative;
+    width: 100%;
+    min-height: 220px;
+    transition: transform .7s;
+    transform-style: preserve-3d;
+}
+
+.flashcard.flip .flash-inner {
+    transform: rotateY(180deg);
+}
+
+.flash-front,
+.flash-back {
+    position: absolute;
+    width: 100%;
+    min-height: 220px;
+    backface-visibility: hidden;
+    background: linear-gradient(135deg,#071952,#088395);
+    color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    text-align: center;
+}
+
+.flash-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(135deg,#088395,#35a29f);
+}
+
+.flash-front h2,
+.flash-back h2 {
+    font-size: 28px;
+}
+
+/* ---------------- PROGRESS ---------------- */
+
+.progress-container {
+    background: #ddd;
+    height: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg,#088395,#35a29f);
+    transition: width .4s;
+}
+
+/* ---------------- FOOTER ---------------- */
+
+footer {
+    background: #06113c;
+    color: white;
+    text-align: center;
+    padding: 35px 15px;
+    margin-top: 30px;
+}
+
+footer h2 {
+    color: #fff700;
+    margin-bottom: 10px;
+}
+
+/* ---------------- BACK TO TOP ---------------- */
+
+#topBtn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    display: none;
+    border: none;
+    background: #088395;
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media(max-width:700px) {
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    header h2 {
+        font-size: 20px;
+    }
+
+    .hero h2 {
+        font-size: 25px;
+    }
+
+    .section-title {
+        font-size: 25px;
+    }
+
+    nav a {
+        font-size: 12px;
+        padding: 7px 9px;
+    }
+
+    .card,
+    .lesson {
+        padding: 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+    <h1>சுந்தர்ராஜு கற்றல் உலகம்</h1>
+    <h2>Sundarraju Kattral Ulagam</h2>
+    <p>Full English Grammar Learning Website</p>
+    <p>ஆங்கில இலக்கணத்தை தமிழில் எளிமையாக கற்போம்</p>
+</header>
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav>
+    <a href="#home">முகப்பு</a>
+    <a href="#parts">Parts of Speech</a>
+    <a href="#tenses">Tenses</a>
+    <a href="#articles">Articles</a>
+    <a href="#prepositions">Prepositions</a>
+    <a href="#voice">Voice</a>
+    <a href="#questions">Questions</a>
+    <a href="#mistakes">Mistakes</a>
+    <a href="#flashcards">Flash Cards</a>
+    <a href="#quiz">Quiz</a>
+</nav>
+
+<main class="container">
+
+<!-- =====================================================
+     HOME
+===================================================== -->
+
+<section id="home">
+
+    <div class="hero">
+
+        <h2>English Grammar கற்போம்!</h2>
+
+        <p>
+            ஆங்கிலத்தை சரியாக பேசவும், எழுதவும், படிக்கவும்
+            தேவையான முக்கியமான Grammar விதிகளை
+            தமிழில் எளிய விளக்கங்களுடன் கற்றுக்கொள்ளுங்கள்.
+        </p>
+
+        <a href="#parts" class="btn">
+            கற்றலை தொடங்குங்கள்
+        </a>
+
+        <a href="#quiz" class="btn">
+            Quiz எழுதுங்கள்
+        </a>
+
+    </div>
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Grammar topic தேடுங்கள்... / Search Grammar..."
+            onkeyup="searchLessons()"
+        >
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PARTS OF SPEECH
+===================================================== -->
+
+<section id="parts">
+
+<h2 class="section-title">
+    Parts of <span>Speech</span>
+</h2>
+
+<div class="grid">
+
+<div class="card lesson-card">
+<h3>1. Noun – பெயர்ச்சொல்</h3>
+
+<p class="tamil">
+ஒரு நபர், இடம், பொருள் அல்லது கருத்தின் பெயர் Noun.
+</p>
+
+<p class="english">
+A noun is the name of a person, place, thing or idea.
+</p>
+
+<div class="example">
+<b>Examples:</b><br>
+Ravi is a student.<br>
+ரவி ஒரு மாணவன்.<br><br>
+
+Chennai is a city.<br>
+சென்னை ஒரு நகரம்.
+</div>
+</div>
+
+
+<div class="card lesson-card">
+<h3>2. Pronoun – பிரதிப்பெயர்</h3>
+
+<p class="tamil">
+Noun-க்கு பதிலாக பயன்படுத்தப்படும் சொல் Pronoun.
+</p>
+
+<p class="english">
+A pronoun is used instead of a noun.
+</p>
+
+<div class="example">
+I, We, You, He, She, It, They<br><br>
+<b>Example:</b><br>
+Ravi is a boy. He is a student.<br>
+ரவி ஒரு சிறுவன். அவன் ஒரு மாணவன்.
+</div>
+</div>
+
+
+<div class="card lesson-card">
+<h3>3. Verb – வினைச்சொல்</h3>
+
+<p class="tamil">
+ஒரு செயலைக் குறிக்கும் சொல் Verb.
+</p>
+
+<p class="english">
+A verb shows an action or state.
+</p>
+
+<div class="example">
+run, eat, play, write, read, sleep<br><br>
+She <b>reads</b> a book.<br>
+அவள் ஒரு புத்தகம் படிக்கிறாள்.
+</div>
+</div>
+
+
+<div class="card lesson-card">
+<h3>4. Adjective – பெயரடை</h3>
+
+<p class="tamil">
+Noun அல்லது Pronoun-ன் தன்மையை விளக்கும் சொல்.
+</p>
+
+<div class="example">
+beautiful, good, tall, small, clever<br><br>
+He is a <b>clever</b> boy.<br>
+அவன் ஒரு புத்திசாலி சிறுவன்.
+</div>
+</div>
+
+
+<div class="card lesson-card">
+<h3>5. Adverb – வினையடை</h3>
+
+<p class="tamil">
+Verb, Adjective அல்லது மற்றொரு Adverb-ஐ விளக்கும் சொல்.
+</p>
+
+<div class="example">
+slowly, quickly, very, carefully<br><br>
+He runs <b>quickly</b>.<br>
+அவன் வேகமாக ஓடுகிறான்.
+</div>
+</div>
+
+
+<div class="card lesson-card">
+<h3>6. Preposition – முன்னிலைச்சொல்</h3>
+
+<p class="tamil">
+ஒரு பொருளுக்கும் மற்றொரு பொருளுக்கும் இடையிலான தொடர்பைக் காட்டும் சொல்.
+</p>
+
+<div class="example">
+in, on, at, under, near, beside<br><br>
+The book is <b>on</b> the table.<br>
+புத்தகம் மேசையின் மீது உள்ளது.
+</div>
+</div>
+
+
+<div class="card lesson-card">
+<h3>7. Conjunction – இணைப்புச்சொல்</h3>
+
+<p class="tamil">
+சொற்கள் அல்லது வாக்கியங்களை இணைக்கும் சொல்.
+</p>
+
+<div class="example">
+and, but, or, because, so<br><br>
+I am tired <b>but</b> happy.<br>
+நான் சோர்வாக இருக்கிறேன் ஆனால் மகிழ்ச்சியாக இருக்கிறேன்.
+</div>
+</div>
+
+
+<div class="card lesson-card">
+<h3>8. Interjection – உணர்ச்சிச்சொல்</h3>
+
+<p class="tamil">
+திடீர் உணர்ச்சியை வெளிப்படுத்தும் சொல்.
+</p>
+
+<div class="example">
+Wow! Oh! Alas! Hurrah!<br><br>
+<b>Wow!</b> What a beautiful place!<br>
+ஆஹா! என்ன அழகான இடம்!
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- =====================================================
+     TENSES
+===================================================== -->
+
+<section id="tenses">
+
+<h2 class="section-title">
+    12 <span>Tenses</span>
+</h2>
+
+<div class="lesson">
+
+<p>
+Tense என்பது ஒரு செயல் எப்போது நடந்தது என்பதை காட்டுகிறது.
+</p>
+
+<p>
+முக்கியமாக 3 காலங்கள் உள்ளன:
+</p>
+
+<ul>
+<li>Present – நிகழ்காலம்</li>
+<li>Past – இறந்தகாலம்</li>
+<li>Future – எதிர்காலம்</li>
+</ul>
+
+</div>
+
+
+<div class="table-wrapper">
+
+<table>
+
+<tr>
+<th>Tense</th>
+<th>Formula</th>
+<th>Example</th>
+<th>Tamil Meaning</th>
+</tr>
+
+<tr>
+<td>Simple Present</td>
+<td>Subject + V1</td>
+<td>I play cricket.</td>
+<td>நான் கிரிக்கெட் விளையாடுகிறேன்.</td>
+</tr>
+
+<tr>
+<td>Present Continuous</td>
+<td>Subject + am/is/are + V-ing</td>
+<td>I am playing cricket.</td>
+<td>நான் கிரிக்கெட் விளையாடிக் கொண்டிருக்கிறேன்.</td>
+</tr>
+
+<tr>
+<td>Present Perfect</td>
+<td>Subject + has/have + V3</td>
+<td>I have played cricket.</td>
+<td>நான் கிரிக்கெட் விளையாடியிருக்கிறேன்.</td>
+</tr>
+
+<tr>
+<td>Present Perfect Continuous</td>
+<td>has/have been + V-ing</td>
+<td>I have been playing cricket.</td>
+<td>நான் கிரிக்கெட் விளையாடிக் கொண்டிருக்கிறேன்.</td>
+</tr>
+
+<tr>
+<td>Simple Past</td>
+<td>Subject + V2</td>
+<td>I played cricket.</td>
+<td>நான் கிரிக்கெட் விளையாடினேன்.</td>
+</tr>
+
+<tr>
+<td>Past Continuous</td>
+<td>was/were + V-ing</td>
+<td>I was playing cricket.</td>
+<td>நான் கிரிக்கெட் விளையாடிக் கொண்டிருந்தேன்.</td>
+</tr>
+
+<tr>
+<td>Past Perfect</td>
+<td>had + V3</td>
+<td>I had played cricket.</td>
+<td>நான் கிரிக்கெட் விளையாடியிருந்தேன்.</td>
+</tr>
+
+<tr>
+<td>Past Perfect Continuous</td>
+<td>had been + V-ing</td>
+<td>I had been playing cricket.</td>
+<td>நான் கிரிக்கெட் விளையாடிக் கொண்டிருந்தேன்.</td>
+</tr>
+
+<tr>
+<td>Simple Future</td>
+<td>will + V1</td>
+<td>I will play cricket.</td>
+<td>நான் கிரிக்கெட் விளையாடுவேன்.</td>
+</tr>
+
+<tr>
+<td>Future Continuous</td>
+<td>will be + V-ing</td>
+<td>I will be playing cricket.</td>
+<td>நான் கிரிக்கெட் விளையாடிக் கொண்டிருப்பேன்.</td>
+</tr>
+
+<tr>
+<td>Future Perfect</td>
+<td>will have + V3</td>
+<td>I will have played cricket.</td>
+<td>நான் கிரிக்கெட் விளையாடியிருப்பேன்.</td>
+</tr>
+
+<tr>
+<td>Future Perfect Continuous</td>
+<td>will have been + V-ing</td>
+<td>I will have been playing cricket.</td>
+<td>நான் கிரிக்கெட் விளையாடிக் கொண்டிருப்பேன்.</td>
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ARTICLES
+===================================================== -->
+
+<section id="articles">
+
+<h2 class="section-title">
+    Articles – <span>a, an, the</span>
+</h2>
+
+<div class="grid">
+
+<div class="card lesson-card">
+
+<h3>A</h3>
+
+<p>
+Consonant sound-க்கு முன் பொதுவாக <b>a</b> பயன்படுத்தப்படும்.
+</p>
+
+<div class="example">
+a boy<br>
+a book<br>
+a car<br><br>
+
+<b>He is a doctor.</b><br>
+அவர் ஒரு மருத்துவர்.
+</div>
+
+</div>
+
+
+<div class="card lesson-card">
+
+<h3>An</h3>
+
+<p>
+Vowel sound-க்கு முன் பொதுவாக <b>an</b> பயன்படுத்தப்படும்.
+</p>
+
+<div class="example">
+an apple<br>
+an egg<br>
+an umbrella<br><br>
+
+<b>She ate an apple.</b><br>
+அவள் ஒரு ஆப்பிள் சாப்பிட்டாள்.
+</div>
+
+</div>
+
+
+<div class="card lesson-card">
+
+<h3>The</h3>
+
+<p>
+குறிப்பிட்ட ஒரு நபர்/பொருள்/இடத்தைக் குறிப்பிட <b>the</b> பயன்படுத்தப்படுகிறது.
+</p>
+
+<div class="example">
+the sun<br>
+the moon<br>
+the book on the table<br><br>
+
+<b>The sun is hot.</b><br>
+சூரியன் சூடாக உள்ளது.
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PREPOSITIONS
+===================================================== -->
+
+<section id="prepositions">
+
+<h2 class="section-title">
+    Prepositions – <span>முன்னிலைச்சொற்கள்</span>
+</h2>
+
+<div class="grid">
+
+<div class="card lesson-card">
+
+<h3>IN – உள்ளே</h3>
+
+<p>
+ஒரு இடத்திற்குள் இருப்பதை குறிக்கும்.
+</p>
+
+<div class="example">
+The pen is <b>in</b> the box.<br>
+பேனா பெட்டிக்குள் உள்ளது.
+</div>
+
+</div>
+
+
+<div class="card lesson-card">
+
+<h3>ON – மீது</h3>
+
+<div class="example">
+The book is <b>on</b> the table.<br>
+புத்தகம் மேசையின் மீது உள்ளது.
+</div>
+
+</div>
+
+
+<div class="card lesson-card">
+
+<h3>UNDER – கீழே</h3>
+
+<div class="example">
+The cat is <b>under</b> the table.<br>
+பூனை மேசையின் கீழே உள்ளது.
+</div>
+
+</div>
+
+
+<div class="card lesson-card">
+
+<h3>NEAR – அருகில்</h3>
+
+<div class="example">
+My house is <b>near</b> the school.<br>
+என் வீடு பள்ளிக்கு அருகில் உள்ளது.
+</div>
+
+</div>
+
+
+<div class="card lesson-card">
+
+<h3>BETWEEN – இடையில்</h3>
+
+<div class="example">
+The shop is <b>between</b> two buildings.<br>
+கடை இரண்டு கட்டிடங்களுக்கு இடையில் உள்ளது.
+</div>
+
+</div>
+
+
+<div class="card lesson-card">
+
+<h3>BEHIND – பின்னால்</h3>
+
+<div class="example">
+The car is <b>behind</b> the house.<br>
+கார் வீட்டின் பின்னால் உள்ளது.
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ACTIVE PASSIVE VOICE
+===================================================== -->
+
+<section id="voice">
+
+<h2 class="section-title">
+    Active & <span>Passive Voice</span>
+</h2>
+
+<div class="lesson">
+
+<h3>Active Voice – செய்வினை</h3>
+
+<p>
+Subject செயலைச் செய்கிறது.
+</p>
+
+<div class="formula">
+Subject + Verb + Object
+</div>
+
+<div class="example">
+Ravi writes a letter.<br>
+ரவி ஒரு கடிதம் எழுதுகிறான்.
+</div>
+
+</div>
+
+
+<div class="lesson">
+
+<h3>Passive Voice – செயப்பாட்டு வினை</h3>
+
+<p>
+Object-க்கு முக்கியத்துவம் கொடுக்கப்படுகிறது.
+</p>
+
+<div class="formula">
+Object + be + V3 + by + Subject
+</div>
+
+<div class="example">
+A letter is written by Ravi.<br>
+ஒரு கடிதம் ரவியால் எழுதப்படுகிறது.
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     QUESTION FORMS
+===================================================== -->
+
+<section id="questions">
+
+<h2 class="section-title">
+    Question <span>Forms</span>
+</h2>
+
+<div class="grid">
+
+<div class="card lesson-card">
+
+<h3>Yes / No Questions</h3>
+
+<div class="example">
+Do you like tea?<br>
+உங்களுக்கு தேநீர் பிடிக்குமா?<br><br>
+
+Yes, I do.<br>
+ஆம், பிடிக்கும்.
+</div>
+
+</div>
+
+
+<div class="card lesson-card">
+
+<h3>WH Questions</h3>
+
+<div class="example">
+What – என்ன<br>
+Who – யார்<br>
+Where – எங்கே<br>
+When – எப்போது<br>
+Why – ஏன்<br>
+Which – எது / எந்த<br>
+How – எப்படி
+</div>
+
+</div>
+
+
+<div class="card lesson-card">
+
+<h3>Examples</h3>
+
+<div class="example">
+Where do you live?<br>
+நீங்கள் எங்கே வசிக்கிறீர்கள்?<br><br>
+
+Why are you late?<br>
+நீ ஏன் தாமதமாக வந்தாய்?<br><br>
+
+What are you doing?<br>
+நீ என்ன செய்து கொண்டிருக்கிறாய்?
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     COMMON MISTAKES
+===================================================== -->
+
+<section id="mistakes">
+
+<h2 class="section-title">
+    Common English <span>Mistakes</span>
+</h2>
+
+<div class="table-wrapper">
+
+<table>
+
+<tr>
+<th>Wrong</th>
+<th>Correct</th>
+<th>Tamil Meaning</th>
+</tr>
+
+<tr>
+<td>He go to school.</td>
+<td>He goes to school.</td>
+<td>அவன் பள்ளிக்குச் செல்கிறான்.</td>
+</tr>
+
+<tr>
+<td>She don't like tea.</td>
+<td>She doesn't like tea.</td>
+<td>அவளுக்கு தேநீர் பிடிக்காது.</td>
+</tr>
+
+<tr>
+<td>I am agree.</td>
+<td>I agree.</td>
+<td>நான் ஒப்புக்கொள்கிறேன்.</td>
+</tr>
+
+<tr>
+<td>He is having a car.</td>
+<td>He has a car.</td>
+<td>அவனிடம் ஒரு கார் உள்ளது.</td>
+</tr>
+
+<tr>
+<td>Discuss about the problem.</td>
+<td>Discuss the problem.</td>
+<td>பிரச்சினையை விவாதி.</td>
+</tr>
+
+<tr>
+<td>She is good in English.</td>
+<td>She is good at English.</td>
+<td>அவள் ஆங்கிலத்தில் திறமையானவள்.</td>
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FLASH CARDS
+===================================================== -->
+
+<section id="flashcards">
+
+<h2 class="section-title">
+    Vocabulary <span>Flash Cards</span>
+</h2>
+
+<div class="flashcard" id="flashcard">
+
+<div class="flash-inner">
+
+<div class="flash-front">
+
+<h2 id="flashEnglish">
+>Hello</h2>
+
+<p>Click the card to see Tamil meaning</p>
+
+</div>
+
+<div class="flash-back">
+
+<h2 id="flashTamil">
+வணக்கம்
+</h2>
+
+<p id="flashExample">
+>Hello = வணக்கம்
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div style="text-align:center">
+
+<button class="btn" onclick="flipCard()">
+🔄 Flip Card
+</button>
+
+<button class="btn" onclick="nextCard()">
+➡️ Next Word
+</button>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     QUIZ
+===================================================== -->
+
+<section id="quiz">
+
+<h2 class="section-title">
+    English Grammar <span>Quiz</span>
+</h2>
+
+<div class="quiz-box">
+
+<div class="progress-container">
+<div class="progress" id="progressBar"></div>
+</div>
+
+<form id="quizForm">
+
+<div class="question">
+
+<h3>1. He ___ to school every day.</h3>
+
+<label class="option">
+<input type="radio" name="q1" value="a">
+go
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="b">
+goes
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="c">
+going
+</label>
+
+</div>
+
+
+<div class="question">
+
+<h3>2. I ___ a student.</h3>
+
+<label class="option">
+<input type="radio" name="q2" value="a">
+am
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="b">
+is
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="c">
+are
+</label>
+
+</div>
+
+
+<div class="question">
+
+<h3>3. She ___ a book now.</h3>
+
+<label class="option">
+<input type="radio" name="q3" value="a">
+reads
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="b">
+is reading
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="c">
+read
+</label>
+
+</div>
+
+
+<div class="question">
+
+<h3>4. I saw ___ elephant.</h3>
+
+<label class="option">
+<input type="radio" name="q4" value="a">
+a
+</label>
+
+<label class="option">
+<input type="radio" name="q4" value="b">
+an
+</label>
+
+<label class="option">
+<input type="radio" name="q4" value="c">
+the
+</label>
+
+</div>
+
+
+<div class="question">
+
+<h3>5. The book is ___ the table.</h3>
+
+<label class="option">
+<input type="radio" name="q5" value="a">
+on
+</label>
+
+<label class="option">
+<input type="radio" name="q5" value="b">
+at
+</label>
+
+<label class="option">
+<input type="radio" name="q5" value="c">
+by
+</label>
+
+</div>
+
+
+<div class="question">
+
+<h3>6. Ravi ___ cricket yesterday.</h3>
+
+<label class="option">
+<input type="radio" name="q6" value="a">
+plays
+</label>
+
+<label class="option">
+<input type="radio" name="q6" value="b">
+played
+</label>
+
+<label class="option">
+<input type="radio" name="q6" value="c">
+playing
+</label>
+
+</div>
+
+
+<div class="question">
+
+<h3>7. They ___ watching TV now.</h3>
+
+<label class="option">
+<input type="radio" name="q7" value="a">
+is
+</label>
+
+<label class="option">
+<input type="radio" name="q7" value="b">
+am
+</label>
+
+<label class="option">
+<input type="radio" name="q7" value="c">
+are
+</label>
+
+</div>
+
+
+<div class="question">
+
+<h3>8. Which word is a noun?</h3>
+
+<label class="option">
+<input type="radio" name="q8" value="a">
+beautiful
+</label>
+
+<label class="option">
+<input type="radio" name="q8" value="b">
+teacher
+</label>
+
+<label class="option">
+<input type="radio" name="q8" value="c">
+quickly
+</label>
+
+</div>
+
+
+<div class="question">
+
+<h3>9. Which word is a verb?</h3>
+
+<label class="option">
+<input type="radio" name="q9" value="a">
+run
+</label>
+
+<label class="option">
+<input type="radio" name="q9" value="b">
+beautiful
+</label>
+
+<label class="option">
+<input type="radio" name="q9" value="c">
+slowly
+</label>
+
+</div>
+
+
+<div class="question">
+
+<h3>10. "Who" means?</h3>
+
+<label class="option">
+<input type="radio" name="q10" value="a">
+எங்கே
+</label>
+
+<label class="option">
+<input type="radio" name="q10" value="b">
+யார்
+</label>
+
+<label class="option">
+<input type="radio" name="q10" value="c">
+எப்போது
+</label>
+
+</div>
+
+
+<button type="button" class="btn" onclick="checkQuiz()">
+✅ Submit Quiz
+</button>
+
+<button type="button" class="btn" onclick="resetQuiz()">
+🔄 Reset
+</button>
+
+</form>
+
+<div id="quizResult"></div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     DAILY SENTENCES
+===================================================== -->
+
+<section>
+
+<h2 class="section-title">
+    Daily <span>English Sentences</span>
+</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>01</h3>
+<p><b>Good morning.</b></p>
+<p>காலை வணக்கம்.</p>
+</div>
+
+<div class="card">
+<h3>02</h3>
+<p><b>How are you?</b></p>
+<p>நீங்கள் எப்படி இருக்கிறீர்கள்?</p>
+</div>
+
+<div class="card">
+<h3>03</h3>
+<p><b>I am fine.</b></p>
+<p>நான் நன்றாக இருக்கிறேன்.</p>
+</div>
+
+<div class="card">
+<h3>04</h3>
+<p><b>What are you doing?</b></p>
+<p>நீ என்ன செய்து கொண்டிருக்கிறாய்?</p>
+</div>
+
+<div class="card">
+<h3>05</h3>
+<p><b>Where are you going?</b></p>
+<p>நீ எங்கே செல்கிறாய்?</p>
+</div>
+
+<div class="card">
+<h3>06</h3>
+<p><b>Please help me.</b></p>
+<p>தயவுசெய்து எனக்கு உதவுங்கள்.</p>
+</div>
+
+<div class="card">
+<h3>07</h3>
+<p><b>Wait for me.</b></p>
+<p>எனக்காக காத்திருங்கள்.</p>
+</div>
+
+<div class="card">
+<h3>08</h3>
+<p><b>I don't understand.</b></p>
+<p>எனக்கு புரியவில்லை.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+</main>
+
+<footer>
+
+<h2>சுந்தர்ராஜு கற்றல் உலகம்</h2>
+
+<p>
+Sundarraju Kattral Ulagam
+</p>
+
+<p>
+English Grammar • Spoken English • Tamil Meaning
+</p>
+
+<p>
+© 2026 Sundarraju Kattral Ulagam. All Rights Reserved.
+</p>
+
+</footer>
+
+
+<button id="topBtn" onclick="topFunction()">↑</button>
+
+
+<script>
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+function searchLessons() {
+
+    let input =
+        document.getElementById("searchInput")
+        .value
+        .toLowerCase();
+
+    let cards =
+        document.querySelectorAll(".lesson-card");
+
+    cards.forEach(function(card) {
+
+        let text =
+            card.innerText.toLowerCase();
+
+        if (text.includes(input)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+}
+
+
+/* =========================================================
+   FLASH CARDS
+========================================================= */
+
+const flashCards = [
+
+    {
+        english: "Beautiful",
+        tamil: "அழகான",
+        example: "She is beautiful."
+    },
+
+    {
+        english: "Brave",
+        tamil: "தைரியமான",
+        example: "He is a brave man."
+    },
+
+    {
+        english: "Clever",
+        tamil: "புத்திசாலியான",
+        example: "Ravi is clever."
+    },
+
+    {
+        english: "Important",
+        tamil: "முக்கியமான",
+        example: "English is important."
+    },
+
+    {
+        english: "Improve",
+        tamil: "மேம்படுத்துதல்",
+        example: "I want to improve my English."
+    },
+
+    {
+        english: "Learn",
+        tamil: "கற்றுக்கொள்",
+        example: "I learn English every day."
+    },
+
+    {
+        english: "Success",
+        tamil: "வெற்றி",
+        example: "Hard work brings success."
+    },
+
+    {
+        english: "Knowledge",
+        tamil: "அறிவு",
+        example: "Knowledge is power."
+    }
+
+];
+
+let flashIndex = 0;
+
+function flipCard() {
+
+    document
+        .getElementById("flashcard")
+        .classList.toggle("flip");
+
+}
+
+function nextCard() {
+
+    flashIndex++;
+
+    if (flashIndex >= flashCards.length) {
+        flashIndex = 0;
+    }
+
+    document.getElementById("flashEnglish").innerText =
+        flashCards[flashIndex].english;
+
+    document.getElementById("flashTamil").innerText =
+        flashCards[flashIndex].tamil;
+
+    document.getElementById("flashExample").innerText =
+        flashCards[flashIndex].example;
+
+    document
+        .getElementById("flashcard")
+        .classList.remove("flip");
+
+}
+
+
+/* =========================================================
+   QUIZ
+========================================================= */
+
+function checkQuiz() {
+
+    const answers = {
+
+        q1: "b",
+        q2: "a",
+        q3: "b",
+        q4: "b",
+        q5: "a",
+        q6: "b",
+        q7: "c",
+        q8: "b",
+        q9: "a",
+        q10: "b"
+
+    };
+
+    let score = 0;
+
+    let total = Object.keys(answers).length;
+
+    for (let question in answers) {
+
+        let selected =
+            document.querySelector(
+                'input[name="' + question + '"]:checked'
+            );
+
+        if (selected &&
+            selected.value === answers[question]) {
+
+            score++;
+
+        }
+
+    }
+
+    let percentage =
+        Math.round((score / total) * 100);
+
+    let result =
+        document.getElementById("quizResult");
+
+    let message = "";
+
+    if (percentage >= 90) {
+
+        message =
+            "🎉 Excellent! மிகவும் அருமை!";
+
+    } else if (percentage >= 70) {
+
+        message =
+            "👏 Very Good! நன்றாக செய்துள்ளீர்கள்!";
+
+    } else if (percentage >= 50) {
+
+        message =
+            "👍 Good! இன்னும் கொஞ்சம் பயிற்சி செய்யுங்கள்.";
+
+    } else {
+
+        message =
+            "📚 Keep Learning! தொடர்ந்து கற்றுக்கொள்ளுங்கள்.";
+
+    }
+
+    result.innerHTML =
+
+        "<div class='result' style='background:#e8fff1;color:#087443'>" +
+
+        "Your Score: " +
+        score +
+        " / " +
+        total +
+        "<br>" +
+
+        "Percentage: " +
+        percentage +
+        "%<br><br>" +
+
+        message +
+
+        "</div>";
+
+}
+
+
+/* =========================================================
+   RESET QUIZ
+========================================================= */
+
+function resetQuiz() {
+
+    document
+        .getElementById("quizForm")
+        .reset();
+
+    document
+        .getElementById("quizResult")
+        .innerHTML = "";
+
+    document
+        .getElementById("progressBar")
+        .style.width = "0%";
+
+}
+
+
+/* =========================================================
+   QUIZ PROGRESS
+========================================================= */
+
+document
+    .querySelectorAll("#quizForm input")
+    .forEach(function(input) {
+
+        input.addEventListener("change", function() {
+
+            let total =
+                document.querySelectorAll(
+                    "#quizForm .question"
+                ).length;
+
+            let answered =
+                new Set();
+
+            document
+                .querySelectorAll(
+                    "#quizForm input:checked"
+                )
+                .forEach(function(item) {
+
+                    answered.add(item.name);
+
+                });
+
+            let percentage =
+                (answered.size / total) * 100;
+
+            document
+                .getElementById("progressBar")
+                .style.width =
+                percentage + "%";
+
+        });
+
+    });
+
+
+/* =========================================================
+   BACK TO TOP BUTTON
+========================================================= */
+
+let topButton =
+    document.getElementById("topBtn");
+
+window.onscroll = function() {
+
+    if (
+        document.body.scrollTop > 300 ||
+        document.documentElement.scrollTop > 300
+    ) {
+
+        topButton.style.display = "block";
+
+    } else {
+
+        topButton.style.display = "none";
+
+    }
+
+};
+
+
+function topFunction() {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+/* =========================================================
+   WELCOME MESSAGE
+========================================================= */
+
+window.addEventListener("load", function() {
+
+    console.log(
+        "Welcome to Sundarraju Kattral Ulagam!"
+    );
+
+});
+
+</script>
+
+</body>
+</html>
